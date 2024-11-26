@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> b23f5fed52ad6ffed8d675001c07010618cef007
@@ -48,6 +49,8 @@ app.*.map.json
 <<<<<<< HEAD
 =======
 =======
+=======
+>>>>>>> 0b0c6a5d8f303fb0fa94aef31dc7c7f0b3a6627d
 # See https://www.dartlang.org/guides/libraries/private-files
 
 # Files and directories created by pub
@@ -75,5 +78,8 @@ doc/api/
 
 .flutter-plugins
 .flutter-plugins-dependencies
+<<<<<<< HEAD
 >>>>>>> f10ccbc8eb2cc1f48cd448a681d9eb691145bedb
 >>>>>>> b23f5fed52ad6ffed8d675001c07010618cef007
+=======
+>>>>>>> 0b0c6a5d8f303fb0fa94aef31dc7c7f0b3a6627d

@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # todo
 =======
 <<<<<<< HEAD
@@ -26,3 +27,8 @@ samples, guidance on mobile development, and a full API reference.
 A todo list with local storage made through Flutter using BLoC for state management.
 >>>>>>> f10ccbc8eb2cc1f48cd448a681d9eb691145bedb
 >>>>>>> b23f5fed52ad6ffed8d675001c07010618cef007
+=======
+# flutter_todo_list
+A todo list with local storage made through Flutter using BLoC for state management.
+
+>>>>>>> 8c2849b348ef1d4c06bdb03bd00693ca9abe4786

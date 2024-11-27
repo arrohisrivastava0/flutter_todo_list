@@ -7,13 +7,18 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:todo/data/repository/todo_repo-impl.dart';
 import 'package:todo/main.dart';
+import 'package:todo/services/database_service.dart';
 
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+    final databaseService = DatabaseService.instance;
+    final todoRepository = TodoRepositoryImpl(databaseService);
+    await tester.pumpWidget(MyApp(todoRepository: todoRepository));
+
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);

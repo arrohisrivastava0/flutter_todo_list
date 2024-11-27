@@ -1,15 +1,10 @@
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
-import 'package:sqflite/sqlite_api.dart';
 import 'package:todo/domain/models/todo.dart';
 
 class DatabaseService{
-  static final DatabaseService databaseService = DatabaseService.databaseService;
+  static final DatabaseService instance = DatabaseService._constructor();
   static Database? _db;
-  // final String _todoTableName="todos";
-  // final String _todoIDName="id";
-  // final String _todoTitleName="title";
-  // final String _todoStatusName="isCompleted";
   DatabaseService._constructor();
 
   Future<Database> get database async{
@@ -28,7 +23,7 @@ class DatabaseService{
           CREATE TABLE todos(
             id INTEGER PRIMARY KEY,
             title TEXT NOT NULL,
-            isCompleted INTEGER NOT NULL,
+            isCompleted INTEGER NOT NULL
           )
           ''');
       }

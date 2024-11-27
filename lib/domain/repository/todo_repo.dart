@@ -6,4 +6,5 @@ abstract class TodoRepo{
   Future<void> addTodo(Todo todo);
   Future<void> deleteTodo(Todo todo);
   Future<void> updateTodo(Todo todo);
+
 }

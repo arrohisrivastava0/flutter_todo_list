@@ -65,6 +65,12 @@ class TodoView extends StatelessWidget {
                   leading: Checkbox(
                     value: todo.isCompleted,
                     onChanged: (value) { todoCubit.toggleCompleted(todo); },
+                    activeColor: todo.isCompleted
+                        ? (isDarkMode ? Colors.grey[800] : Colors.grey[300]) // Dull color when checked
+                        : (isDarkMode ? Colors.white : Colors.blue), // Default active color
+                    checkColor: todo.isCompleted
+                        ? Colors.grey[500] // Dull tick color
+                        : Colors.white, // Default tick color when not checked
                   ),
                   trailing: IconButton(
                       onPressed: ()=>todoCubit.deleteTodo(todo),

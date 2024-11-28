@@ -36,6 +36,7 @@ class TodoView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
     final todoCubit = context.read<TodoCubit>();
     return Scaffold(
       floatingActionButton: FloatingActionButton(
@@ -54,7 +55,9 @@ class TodoView extends StatelessWidget {
                   title: Text(
                       todo.title,
                     style: TextStyle(
-
+                      color: todo.isCompleted
+                          ? (isDarkMode ? Colors.grey[600] : Colors.grey)
+                          : (isDarkMode ? Colors.white : Colors.black),
                       decoration:
                       todo.isCompleted? TextDecoration.lineThrough: TextDecoration.none,
                     ),

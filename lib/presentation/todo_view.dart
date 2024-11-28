@@ -51,7 +51,14 @@ class TodoView extends StatelessWidget {
               itemBuilder: (context, index){
                 final todo=todos[index];
                 return ListTile(
-                  title: Text(todo.title),
+                  title: Text(
+                      todo.title,
+                    style: TextStyle(
+
+                      decoration:
+                      todo.isCompleted? TextDecoration.lineThrough: TextDecoration.none,
+                    ),
+                  ),
                   leading: Checkbox(
                     value: todo.isCompleted,
                     onChanged: (value) { todoCubit.toggleCompleted(todo); },

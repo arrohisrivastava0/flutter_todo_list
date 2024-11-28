@@ -1,11 +1,19 @@
+import 'dart:io';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:todo/domain/models/todo.dart';
+import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 
 class DatabaseService{
   static final DatabaseService instance = DatabaseService._constructor();
   static Database? _db;
-  DatabaseService._constructor();
+  DatabaseService._constructor(){
+    if (!Platform.isAndroid && !Platform.isIOS) {
+      // Initialize sqflite for desktop
+      sqfliteFfiInit();
+      databaseFactory = databaseFactoryFfi;
+    }
+  }
 
   Future<Database> get database async{
     if(_db!=null) return _db!;
@@ -17,6 +25,7 @@ class DatabaseService{
     final databaseDirPath=await getDatabasesPath();
     final databasePath=join(databaseDirPath, "master_db.db");
     final database=await openDatabase(
+        version: 1,
         databasePath,
       onCreate: (db, version){
           db.execute('''
